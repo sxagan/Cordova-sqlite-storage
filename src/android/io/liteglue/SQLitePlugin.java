@@ -55,7 +55,7 @@ public class SQLitePlugin extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         totalInstances++;
-        Log.d(SQLitePlugin.class.getSimpleName(), "SQLitePlugin Initialize", e);
+        Log.d(SQLitePlugin.class.getSimpleName(), "SQLitePlugin Initialize");
         
       }
 
