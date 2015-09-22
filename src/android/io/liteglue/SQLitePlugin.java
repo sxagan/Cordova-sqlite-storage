@@ -50,6 +50,15 @@ public class SQLitePlugin extends CordovaPlugin {
      * NOTE: Using default constructor, no explicit constructor.
      */
 
+    static int totalInstances = 0;
+
+    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
+        super.initialize(cordova, webView);
+        totalInstances++;
+        Log.d(SQLitePlugin.class.getSimpleName(), "SQLitePlugin Initialize", e);
+        
+      }
+
     /**
      * Executes the request and returns PluginResult.
      *
@@ -165,6 +174,8 @@ public class SQLitePlugin extends CordovaPlugin {
      */
     @Override
     public void onDestroy() {
+        if (totalInstances > 0) 
+            return;
         while (!dbrmap.isEmpty()) {
             String dbname = dbrmap.keySet().iterator().next();
 
