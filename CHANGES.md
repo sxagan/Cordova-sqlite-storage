@@ -1,7 +1,32 @@
 # Changes
 
-## 0.7.11-dev
+## 0.7.15-pre
 
+- All iOS operations are now using background processing (reported to resolve intermittent problems with cordova-ios@4.0.1)
+
+## 0.7.14
+
+- REGEXP support removed from this version branch
+- Remove src/android/libs/.gitignore (inadvertently added in 0.7.13)
+
+## 0.7.13
+
+- REGEXP support removed from this version branch
+- Rename Windows C++ Database close function to closedb to resolve conflict for Windows Store certification
+- Android version with sqlite `3.8.10.2` embedded (with error messages fixed)
+- Pre-populated database support removed from this version branch
+- Amazon Fire-OS support removed
+- Fix conversion warnings in iOS version
+
+## 0.7.12
+
+- Fix to Windows "Universal" version to support big integers
+- Implement database close and delete operations for Windows "Universal"
+- Fix readTransaction to skip BEGIN/COMMIT/ROLLBACK
+
+## 0.7.11
+
+- Fix plugin ID in plugin.xml to match npm package ID
 - Unpacked sqlite-native-driver.so libraries from jar
 - Fix conversion of INTEGER type (iOS version)
 - Disable code to read BLOB as Base-64 due to https://issues.apache.org/jira/browse/CB-9638
