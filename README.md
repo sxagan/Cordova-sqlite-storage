@@ -36,6 +36,7 @@ Commercial support is available by contacting: <info@litehelpers.net>
 
 ## Announcements
 
+- [MetaMemoryT / websql-promise](https://github.com/MetaMemoryT/websql-promise) now provides a Promises-based interface to both Web SQL and this plugin
 - [Cordova sqlite storage (0.7.10) published](https://build.phonegap.com/plugins/4067) in PhoneGap Build
 - Android version is now using the lightweight [Android-sqlite-connector](https://github.com/liteglue/Android-sqlite-connector) by default configuration (may be changed as described below)
 - Windows "Universal" version now supports both Windows 8.1 and Windows Phone 8.1
@@ -77,7 +78,6 @@ Commercial support is available by contacting: <info@litehelpers.net>
 - A stability issue was reported on the iOS version when in use together with [SockJS](http://sockjs.org/) client such as [pusher-js](https://github.com/pusher/pusher-js) at the same time (see [#196](https://github.com/litehelpers/Cordova-sqlite-storage/issues/196)). The workaround is to call sqlite functions and [SockJS](http://sockjs.org/) client functions in separate ticks (using setTimeout with 0 timeout).
 - If a sql statement fails for which there is no error handler or the error handler does not return `false` to signal transaction recovery, the plugin fires the remaining sql callbacks before aborting the transaction.
 - DROP table does not actually delete it in WP(7/8) version, due to limitations of CSharp-SQLite.
-- Issues have been reported when using this plugin together with Crosswalk, especially with 64-bit architectures. The workaround is to use `androidDatabaseImplementation: 2` when opening the database as described below.
 
 ## Other limitations
 
@@ -561,11 +561,20 @@ Free support for issues with Angular/"ngCordova"/Ionic will only be provided if 
 - Make a fresh, clean ngCordova or Ionic project with a test program that demonstrates the issue and post it. Please do not use any other plugins or frameworks unless absolutely necessary to demonstrate your issue.
 - Make another project without any form of Angular including ngCordova or Ionic, with the same test program to show that it will work outside Angular/"ngCordova"/Ionic.
 
+## What information is needed for help
+
+Please include the following:
+- Which platform(s) Android/iOS/WP8/Windows 8.1/Windows Phone 8.1
+- Clear description of the issue
+- A small, complete, self-contained program that demonstrates the problem
+
 ## Where to ask for help
 
-Once you have followed the directions above, free support is available in the following locations:
+Once you have followed the directions above, you may request free support in the following locations:
 - [litehelpers / Cordova-sqlite-help](https://github.com/litehelpers/Cordova-sqlite-help)
 - [litehelpers / Cordova-sqlite-storage / issues](https://github.com/litehelpers/Cordova-sqlite-storage/issues)
+
+Please include the information described above otherwise.
 
 ## Professional support
 
